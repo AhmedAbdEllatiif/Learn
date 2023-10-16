@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  api:
+    build: ./node_app_with_volumes
+    container_name: node_app_api_c
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./node_app_with_volumes:/app
+      - /app/node_modules
+  
+  fornt-end:
+    build: ./blog
+    container_name: node_app_front_c
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./blog:/app
+      - /app/node_modules
+    
+    # starts the container in interactive mode 
+    # this what we should do with react apps in docker
+    stdin_open: true
+    tty: true
