@@ -1,0 +1,32 @@
+# api version of deployment is apps/v1
+# try >> kubectl api-resources | grep deployments
+apiVersion: apps/v1
+
+# kind of that yml file
+kind: Deployment
+
+# meta data for this deployment
+metadata:
+  name: dep-webserver
+
+# define the spec of the replicas (replicas is responsible of creating pods by using the same template)
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+
+  # define the template 
+  # labels: must have the same labels used by replicas to help replicas to select that templates
+  template:
+    metadata:
+      labels:
+        app: web
+
+    # define the containers
+    spec:
+      containers: 
+        - name: web
+          image: nginx:latest
+          ports:
+            - containerPort: 80

@@ -1,0 +1,14 @@
+
+# api version
+apiVersion: v1
+
+# the kind to configure
+kind: Pod
+metadata:
+  name: "nginx-app2"
+spec:
+  containers:
+    - name: nginx-app
+      image: nginx:latest
+      ports: 
+        - containerPort: 80

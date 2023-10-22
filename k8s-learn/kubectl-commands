@@ -1,0 +1,23 @@
+# To create pod from yml file
+kubectl apply -f <file-name.yaml>
+
+# To create a new deployment
+kubectl create deployment <deployment-name> <image:tag> 
+
+# to delete a pod
+kubectl delete pod <pod-name>
+
+# To delete all pods
+kubectl delete pod --all
+
+# To show all pods with their ips
+kubectl get pods -o wide
+
+# scale deployment <deployment-name> --replicas=<count>
+kubectl scale deployment web-app --replicas=3
+
+# To access minikube local server 
+minikube ssh
+
+# To show all api resources
+kubectl api-resources
