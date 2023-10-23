@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+
+  # api service
+  api:
+    build: ./backend
+    container_name: api_c
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+  
+  # front-end service
+  fornt-end:
+    build: ./blog
+    container_name: frontend_c
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./blog:/app
+      - /app/node_modules
+    
+    # starts the container in interactive mode 
+    # this what we should do with react apps in docker
+    stdin_open: true
+    tty: true
