@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.8" hhh
 services:
   api:
     build: ./node_app_with_volumes
