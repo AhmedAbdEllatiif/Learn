@@ -1,11 +1,16 @@
 
 # api version
+# try >> kubectl api-resources | grep pod
 apiVersion: v1
 
 # the kind to configure
 kind: Pod
+
+# meta data of this pod
 metadata:
   name: "nginx-app4"
+
+# sepc of this pod 
 spec:
   containers:
     - name: nginx-app

@@ -15,4 +15,4 @@ RUN npm install
 EXPOSE 4000
 
 # uses while the container starts to run
-CMD ["npm", "start"]
+CMD ["node", "app.js"]

@@ -4,7 +4,16 @@ kubectl apply -f <file-name.yaml>
 # To create a new deployment
 kubectl create deployment <deployment-name> <image:tag> 
 
-# to delete a pod
+# To descibe 
+kubectl describe <pod,deployment,etc..> <name>
+
+# To export data in json format 
+kubectl get pods -o json
+
+# To select from labels
+kubectl get pod --selector/-l <env=prod>
+
+# To delete a pod
 kubectl delete pod <pod-name>
 
 # To delete all pods
@@ -21,3 +30,17 @@ minikube ssh
 
 # To show all api resources
 kubectl api-resources
+
+# To scale the replicas
+kubctl scale deployment --replicas=<number>
+
+# To expose servcice for a running deployment
+# types:
+#   - ClusterIp
+#   - NodePort
+#   - LoadBalancer 
+#   - ExternalService
+kubctl expose deployment <deployment-name> --name=<service-name> --type=<service-type> --port=9090 --target-port=9090
+
+# To forward a port 
+kubectl port-forward service/<serivce-name> <host-port>:<contianer-port>
