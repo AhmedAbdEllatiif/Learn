@@ -31,8 +31,15 @@ Follow these steps to run the Node.js app on Kubernetes:
     UseTLS=YES
     UseSTARTTLS=YES
 
+7. **Make sendmail.sh and copy the script** 
+    ```bash
+    touch sendmail.sh 
+
 7. **Make the sendmail.sh executable** 
     ```bash
     sudo chmod 777 sendmail.sh  
 
-./sendmail.sh -r "Recipient1, Recipient2" -d "Monday" -m "Your-Message" -s "Sender-name"
+8. **Execute the script** 
+    ```bash
+    ./sendmail.sh -r "Recipient1, Recipient2" -d "Monday" -m "Your-Message" -s "Sender-name"
+
