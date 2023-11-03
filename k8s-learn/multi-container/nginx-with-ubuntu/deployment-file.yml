@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Pod
+
+
+metadata:
+  name: nginx-with-ubuntu-pod
+spec:
+  restartPolicy: Never
+  # securityContext:
+  #       runAsUser: 101   # Use a non-root user ID
+  #       runAsGroup: 101  # Use a non-root group ID
+  #       fsGroup: 101    
+  volumes:
+    - name: shared-area
+      emptyDir: {} 
+
+  containers:
+    - name: nginx
+      image: nginx
+      ports:
+        - containerPort: 80
+      volumeMounts:
+        - name: shared-area
+          mountPath: /usr/share/nginx/html
+      
+    - name: ubuntu-container
+      image: ubuntu:latest  
+      volumeMounts:
+        - name: shared-area
+          mountPath: /pod-area
+      command: [/bin/sh]
+      args: ["-c", "echo Ahmed is Awesome > /pod-area/index.html"]
