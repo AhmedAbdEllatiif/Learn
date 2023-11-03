@@ -1,14 +1,7 @@
 
 # Sending TPS report reminder mail
 
-This project provides instructions for sending a report mail to multiple recipient.
-
-## Prerequisites
-
-Before you proceed, make sure you have the following tools installed:
-
-- [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/): The Kubernetes command-line tool.
-- A running Kubernetes cluster. You can use [Minikube](https://minikube.sigs.k8s.io/docs/start/) for local development.
+This project provides instructions for sending a report mail to multiple recipients.
 
 ## Getting Started
 
