@@ -5,7 +5,7 @@
 function waiter_simulation(){
 # ask user 
 echo
-read -rep "Which would you choose: " user_option
+read -rp "Which would you choose: " user_option
 
 case $user_option in 
 #
