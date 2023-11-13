@@ -57,3 +57,8 @@
 14. **To forward a port**
     ```bash
     kubectl port-forward service/<serivce-name> <host-port>:<contianer-port>
+
+
+15. **To create configmap file**
+    ```bash
+    kubectl create configmap <name-inside-the-cluster> --from-file=<absolute-file-path>

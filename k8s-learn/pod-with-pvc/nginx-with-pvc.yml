@@ -1,0 +1,63 @@
+#
+#
+# 
+#  Creating PersistentVolumeClaim
+#
+#
+#
+
+# api version
+apiVersion: v1
+
+# PersistentVolumeClaim kind
+kind: PersistentVolumeClaim
+
+# PersistentVolumeClaim metadata
+metadata:
+  name: mypvc-nginx-storage
+
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests: 
+      storage: 3Gi
+
+---
+#
+#
+# 
+# Creating pod 
+#
+#
+#
+
+# api version
+apiVersion: v1
+
+# the kind to configure
+kind: Pod
+
+# meta data of this pod
+metadata:
+  name: "nginx-web-app"
+
+# sepc of this pod 
+spec:
+
+  # pod volumes
+  volumes:
+    - name: nginx-server-storage
+      persistentVolumeClaim:
+        claimName: mypvc-nginx-storage 
+
+  # containers of the pod
+  containers:
+    - name: nginx-container-app
+      image: nginx:latest
+
+      # volume mounts
+      # name must mout to the name of the pod volume
+      volumeMounts:
+        - name: nginx-server-storage
+          mountPath: "/usr/share/nginx/html"

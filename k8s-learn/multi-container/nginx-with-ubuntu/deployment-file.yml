@@ -5,11 +5,7 @@ kind: Pod
 metadata:
   name: nginx-with-ubuntu-pod
 spec:
-  restartPolicy: Never
-  # securityContext:
-  #       runAsUser: 101   # Use a non-root user ID
-  #       runAsGroup: 101  # Use a non-root group ID
-  #       fsGroup: 101    
+  restartPolicy: Never  
   volumes:
     - name: shared-area
       emptyDir: {} 
