@@ -62,3 +62,11 @@
 15. **To create configmap file**
     ```bash
     kubectl create configmap <name-inside-the-cluster> --from-file=<absolute-file-path>
+
+16. **To create secret file**
+    **types:**
+    **- generic**
+    **- docker-registry**
+    **- tls**
+    ```bash
+    kubectl create secret <secret-type> <secret-name> --from-literal='key'='value'
