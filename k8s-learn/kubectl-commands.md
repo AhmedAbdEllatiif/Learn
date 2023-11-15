@@ -5,7 +5,7 @@
 
 2. **To create a new deployment**
     ```bash
-    kubectl create deployment <deployment-name> <image:tag> 
+    kubectl create deployment <deployment-name> --image=<image:tag> 
 3. **To descibe**
    ```bash
    kubectl describe <pod,deployment,etc..> <name>
