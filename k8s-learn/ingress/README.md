@@ -1,6 +1,10 @@
-# Running a Node.js App using Kubernetes and minikube
+<p align="center">
+<img src="https://github.com/AhmedAbdEllatiif/AhmedAbdEllatiif/assets/40568882/ca8d1198-6c92-4f67-a982-786269c4a64e" alt="Description of the image" height="500" width="500">
+</p>
 
-This repository provides instructions for deploying and running a Node.js application using Kubernetes.
+# Exposing simple node app with Ingress
+
+This repository provides instructions for exposing node app  using ingress.
 
 ## Prerequisites
 
@@ -27,10 +31,10 @@ Follow these steps to run the Node.js app on Kubernetes:
     Kubectl get pods -n ingress-nginx
 6. **(OPTIONAL) Create new namespace**
     ```bash
-    Kubectl create namespace ingress-ns
+    Kubectl create namespace <your-name-space>
 7. **Apply all files**
     ```bash
-    Kubectl apply -f . -n ingress-ns
+    Kubectl apply -f . -n <your-name-space>
 8. **Append 127.0.0.1 webapp-example.com to your /etc/hosts**
     ```bash
     echo "127.0.0.1 webapp-example.com" | sudo tee -a /etc/hosts 
@@ -40,5 +44,3 @@ Follow these steps to run the Node.js app on Kubernetes:
 10. **Open Browser hit webapp-example.com/v1 or webapp-example.com/v2**
 
 
-
-<img src="https://github.com/AhmedAbdEllatiif/AhmedAbdEllatiif/assets/40568882/ca8d1198-6c92-4f67-a982-786269c4a64e" alt="Description of the image">
