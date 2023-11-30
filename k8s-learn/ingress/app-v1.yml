@@ -1,0 +1,33 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-web-app-v1
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-web-app-v1
+  template:
+    metadata:
+      labels:
+        app: node-web-app-v1
+    spec:
+      containers: 
+        - name: web
+          image: ahmedmohamed1993/node-web-app:v1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 4000
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: web-app-service-v1
+spec:	
+  selector:
+    app: node-web-app-v1
+  ports:
+     - port: 4000
