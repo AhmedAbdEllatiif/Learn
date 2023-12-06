@@ -9,12 +9,21 @@ pipeline {
     }
     stages {
         stage('Build') {
+            // steps {
+            //     echo "Building.."
+            //     sh 'cd CI-CD/jenkins/myapp'
+            //     sh 'which python3'
+            //     sh 'which pip3'
+            //     sh 'pip3 install -r requirements.txt'
+            // }
             steps {
                 echo "Building.."
-                sh 'cd CI-CD/jenkins/myapp'
-                sh 'which python3'
-                sh 'which pip3'
-                sh 'pip3 install -r requirements.txt'
+                sh '''
+                cd CI-CD/jenkins/myapp
+                python3 -m venv venv
+                source venv/bin/activate
+                pip install -r requirements.txt
+                '''
             }
         }
         stage('Test') {
