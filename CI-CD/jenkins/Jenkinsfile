@@ -12,8 +12,7 @@ pipeline {
             steps {
                 echo "Building.."
                 sh '''
-                cd CI-CD/jenkins/myapp
-                pip install -r requirements.txt
+                echo "App Build "
                 '''
             }
         }
