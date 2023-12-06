@@ -14,8 +14,6 @@ pipeline {
                 sh 'cd CI-CD/jenkins/myapp'
                 sh 'which python3'
                 sh 'which pip3'
-                sh 'python3 -m venv venv'
-                sh 'source venv/bin/activate'
                 sh 'pip3 install -r requirements.txt'
             }
         }
