@@ -11,10 +11,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
-                sh ''' pwd '''
-                sh ''' ls '''
                 sh '''
-                cd myapp
+                cd CI-CD/jenkins/myapp
                 pip install -r requirements.txt
                 '''
             }
@@ -23,7 +21,7 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                cd myapp
+                cd CI-CD/jenkins/myapp
                 python3 hello.py
                 python3 hello.py --name=Brad
                 '''
