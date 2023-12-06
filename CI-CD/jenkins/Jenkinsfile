@@ -11,6 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
+                sh 'sudo  echo "super hello world" '
                 sh 'cd CI-CD/jenkins/myapp'
                 sh 'which python3'
                 sh 'which pip3'
